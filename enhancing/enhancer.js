@@ -5,8 +5,14 @@ module.exports = {
   get
 };
 
-function succeed(item) {
-  return { ...item };
+function succeed(item, enhancementStatus) {
+  if (enhancementStatus) {
+    return {
+      ...item,
+      durability: item.enhancement,
+      enhancement: item.enhancement < 20 ? item.enhancement + 1 : 20
+    };
+  }
 }
 
 function fail(item) {

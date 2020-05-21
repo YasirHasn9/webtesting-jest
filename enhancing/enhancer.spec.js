@@ -1,13 +1,17 @@
 const enhancer = require("./enhancer.js");
 // test away!
+describe("succeed", () => {
+  it("returns a new item object modified according to the rules defined by the client for enhancement success.", () => {
+    const succeedItem = {
+      name: "Yasir",
+      enhancement: 15,
+      durability: 80
+    };
+    const expected = enhancer.succeed(succeedItem, true);
+    expect(expected.enhancement).toBe(16);
+  });
+});
 
-// - a `repair(item)` method that accepts an `item`
-//  object and **returns a new
-//  item** with the durability restored to 100.
-//  This method is the simplest of the three and would be a
-// - Items have `name`, `durability` and `enhancement`.
-// - The item's `enhancement` it's a number from 0 to 20.
-// - The item's `durability` it's a number from 0 to 100.
 describe("repair", () => {
   it("returns a new item with the durability restored to 100.", () => {
     const repairItem = {
