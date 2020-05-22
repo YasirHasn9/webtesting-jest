@@ -23,3 +23,15 @@ describe("repair", () => {
     expect(expected.durability).toBe(100);
   });
 });
+
+describe("fail", () => {
+  it("returns a new item modified according to the rules defined by the client", () => {
+    const repairItem = {
+      name: "Yasir",
+      enhancement: 18,
+      durability: 100
+    };
+    const expected = enhancer.repair(repairItem);
+    expect(expected.durability).toBe(100);
+  });
+});
